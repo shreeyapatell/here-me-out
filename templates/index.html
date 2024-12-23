@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hear Me Out</title>
+    <style>
+        body {
+            background-color: #fff1f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            width: 1200px;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
+        }
+        .canvas-container {
+            flex: 1;
+        }
+        .upload-section {
+            background: #ffd1dc;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+        }
+        #canvas {
+            background: white;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+        .upload-area {
+            width: 200px;
+            height: 200px;
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        .submit-btn {
+            background: #ff69b4;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 150px;
+        }
+        #dropZone {
+            text-align: center;
+            padding: 20px;
+        }
+        .upload-title {
+            color: #ff69b4;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hear Me Out</h1>
+        <div class="content-wrapper">
+            <div class="canvas-container">
+                <canvas id="canvas" width="600" height="600"></canvas>
+            </div>
+            <div class="upload-section">
+                <div class="upload-title">Submit a Photo</div>
+                <div class="upload-area" id="dropZone">
+                    <p>Drag and Drop,<br>Copy and Paste,<br>or Upload</p>
+                </div>
+                <button class="submit-btn" onclick="handleUpload()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
